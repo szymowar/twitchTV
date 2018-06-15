@@ -49,14 +49,31 @@ table {
 
 /*============================================================================*/
 .main-container {
-	margin: 20% 20%;
+	margin: 10% 10%;
 }
 .main-element {
 	display: block;
-	border: 1px solid red;
+	border: 1px solid grey;
 
 }
 .option {
 	display: inline-block;
 	border: 1px solid red;
+}
+
+/*==============================================================================
+	List item
+==============================================================================*/
+.imgSize {
+	width: 30px;
+	height: 30px;
+	border: 3px solid white;
+	border-radius: 50%;
+}
+.listItem {
+	display: inline-block;
+}
+.channelItem {
+	border: 1px solid white;
+	background-color: grey;
 }
