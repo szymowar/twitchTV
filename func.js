@@ -4,10 +4,18 @@ function makeUrl(type, channel) {
 
 }
 
+function buildListItem(data) {
+    const item = document.createElement("LI");
+        item.setAttribute("class", "channelItem");
+        item.innerText = data;
+    const list = document.querySelector("#res");
+        list.appendChild(item);
+}
+
 function getInfo(channels) {
     channels.forEach(function (channel){
-        $.getJSON(makeUrl("streams", channel),function (data) {
-            console.log(data);
+        $.getJSON(makeUrl("channels", channel), function (data){
+            buildListItem(data.status);
         })
     });
 }
