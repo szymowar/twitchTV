@@ -3,30 +3,28 @@ function makeUrl(type, channel) {
     return "https://wind-bow.gomix.me/twitch-api" + '/' + type + '/' + channel + '?callback=?';
 }
 
+function changeDisplay(elem, val){
+    for(let i = 0; i < elem.length; i++){
+            elem[i].parentNode.style.display = val;
+        }
+}
+
 function show_online() {
     let online = document.querySelectorAll(".online");
-    for(let i = 0; i < online.length; i++){
-            online[i].parentNode.style.display = "block";
-        }
+    changeDisplay(online,"block");
     }
 function hide_online() {
     let online = document.querySelectorAll(".online");
-    for(let i = 0; i < online.length; i++){
-            online[i].parentNode.style.display = "none";
-        }
+    changeDisplay(online, "none");
     }
 
 function show_offline() {
     let offline = document.querySelectorAll(".offline");
-    for(let i = 0; i < offline.length; i++){
-            offline[i].parentNode.style.display = "block";
-        }
+    changeDisplay(offline, "block");
 }
 function hide_offline() {
     let offline = document.querySelectorAll(".offline");
-    for(let i = 0; i < offline.length; i++){
-            offline[i].parentNode.style.display = "none";
-        }
+    changeDisplay(offline, "none");
 }
 
 function online(){
