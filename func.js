@@ -3,33 +3,44 @@ function makeUrl(type, channel) {
     return "https://wind-bow.gomix.me/twitch-api" + '/' + type + '/' + channel + '?callback=?';
 }
 
-function online() {
-    let online = document.querySelectorAll(".channelItem");
+function show_online() {
+    let online = document.querySelectorAll(".online");
     for(let i = 0; i < online.length; i++){
-        if(online[i].children[2].innerText == "Offline"){
-            online[i].style.display = "none";
-        }else{
-            online[i].style.display = "block";
+            online[i].parentNode.style.display = "block";
         }
     }
+function hide_online() {
+    let online = document.querySelectorAll(".online");
+    for(let i = 0; i < online.length; i++){
+            online[i].parentNode.style.display = "none";
+        }
+    }
+
+function show_offline() {
+    let offline = document.querySelectorAll(".offline");
+    for(let i = 0; i < offline.length; i++){
+            offline[i].parentNode.style.display = "block";
+        }
+}
+function hide_offline() {
+    let offline = document.querySelectorAll(".offline");
+    for(let i = 0; i < offline.length; i++){
+            offline[i].parentNode.style.display = "none";
+        }
 }
 
+function online(){
+    show_online();
+    hide_offline();
+}
 function offline() {
-    let online = document.querySelectorAll(".channelItem");
-    for(let i = 0; i < online.length; i++){
-        if(online[i].children[2].innerText != "Offline"){
-            online[i].style.display = "none";
-        }else{
-            online[i].style.display = "block";
-        }
-    }
+    show_offline();
+    hide_online();
 }
 
-function all() {
-    let online = document.querySelectorAll(".channelItem");
-    for(let i = 0; i < online.length; i++){
-            online[i].style.display = null;
-    }
+function alls() {
+    show_online();
+    show_offline();
 }
 
 function buildListItem(data) {
@@ -48,10 +59,11 @@ function buildListItem(data) {
         item.appendChild(titleItem);
 
     let textItem = document.createElement("DIV");
-        textItem.setAttribute("class", "listItem")
         if(data.status === null){
             textItem.innerText = "Offline";
+            textItem.setAttribute("class", "offline listItem");
         }else{
+            textItem.setAttribute("class", "online listItem");
             if(data.status != null && data.status.length > 20){
                 textItem.innerText = data.status.slice(0,20) + "...";
             }else {
