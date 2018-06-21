@@ -10,21 +10,17 @@ function changeDisplay(elem, val){
 }
 
 function show_online() {
-    let online = document.querySelectorAll(".online");
-    changeDisplay(online,"block");
+    changeDisplay(document.querySelectorAll(".online"),"block");
     }
 function hide_online() {
-    let online = document.querySelectorAll(".online");
-    changeDisplay(online, "none");
+    changeDisplay(document.querySelectorAll(".online"), "none");
     }
 
 function show_offline() {
-    let offline = document.querySelectorAll(".offline");
-    changeDisplay(offline, "block");
+    changeDisplay(document.querySelectorAll(".offline"), "block");
 }
 function hide_offline() {
-    let offline = document.querySelectorAll(".offline");
-    changeDisplay(offline, "none");
+    changeDisplay(document.querySelectorAll(".offline"), "none");
 }
 
 function online(){
@@ -36,7 +32,7 @@ function offline() {
     hide_online();
 }
 
-function alls() {
+function show_all() {
     show_online();
     show_offline();
 }
