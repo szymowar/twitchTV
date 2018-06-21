@@ -4,23 +4,24 @@ function makeUrl(type, channel) {
 }
 
 function changeDisplay(elem, val){
+    elem = document.querySelectorAll(elem);
     for(let i = 0; i < elem.length; i++){
             elem[i].parentNode.style.display = val;
         }
 }
 
 function show_online() {
-    changeDisplay(document.querySelectorAll(".online"),"block");
+    changeDisplay(".online", "block");
     }
 function hide_online() {
-    changeDisplay(document.querySelectorAll(".online"), "none");
+    changeDisplay(".online", "none");
     }
 
 function show_offline() {
-    changeDisplay(document.querySelectorAll(".offline"), "block");
+    changeDisplay(".offline", "block");
 }
 function hide_offline() {
-    changeDisplay(document.querySelectorAll(".offline"), "none");
+    changeDisplay(".offline", "none");
 }
 
 function online(){
