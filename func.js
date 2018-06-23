@@ -4,9 +4,9 @@ function makeUrl(type, channel) {
 }
 
 function changeDisplay(elem, val){
-    elem = document.querySelectorAll(elem);
+    let status = document.querySelectorAll(elem);
     for(let i = 0; i < elem.length; i++){
-            elem[i].parentNode.style.display = val;
+            status[i].parentNode.style.display = val;
         }
 }
 
