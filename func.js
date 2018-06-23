@@ -5,7 +5,7 @@ function makeUrl(type, channel) {
 
 function changeDisplay(elem, val){
     let status = document.querySelectorAll(elem);
-    for(let i = 0; i < elem.length; i++){
+    for(let i = 0; i < status.length; i++){
             status[i].parentNode.style.display = val;
         }
 }
